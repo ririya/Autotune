@@ -1,0 +1,25 @@
+% [d,sr]=audioread('sf1_cln.wav'); 
+sr 
+sr = 16000;
+% 1024 samples is about 60 ms at 16kHz, a good window 
+% y=pvoc(d,.75,1024); 
+% 
+% % Compare original and resynthesis 
+% sound(d,16000) 
+% sound(y,16000)
+
+% [d,sr]=audioread('clar.wav'); 
+
+ [d,sr]=audioread('C:\ClassProjects\speech\FinalProject\Database\speech\cam1.wav'); 
+e = pvoc(d, 2.^(2/12)); 
+f = resample(e,10^4),round(); % NB: 0.8 = 4/5 
+% soundsc(d(1:length(f))+f,sr)
+% soundsc(d,sr)
+soundsc(f,sr)
+
+
+% y=pvoc(d,.75,1024); 
+
+% Compare original and resynthesis 
+% sound(d,16000) 
+% sound(y,16000)
